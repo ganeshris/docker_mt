@@ -112,7 +112,7 @@ public class ScriptRunnerController {
 		
 		String str = null;
 		
-		String path =projectpath +"/src/main/resources/ScriptFiles/copy.sh";
+		String path =projectpath +"/ScriptFiles/copy.sh";
 //		File pathfile = new File(path);
 //		String filename = pathfile.getName();
 //		
@@ -184,14 +184,14 @@ public class ScriptRunnerController {
 //		
 //		System.out.println(intialize);
 //		
-//		String path1 =projectpath +"/testingfor script";
+//		String path1 =projectpath +"/testingfor script/"+filename;
 //
 //	
 //		FileWriter fw = null;
 //		BufferedWriter bw = null;
 //		
 //			// FILE NAME SHOULD CHANGE DEPENDS ON TECH_STACK/OBJECT_tYPE/SUB_OBJECT_TYPE
-//			File masterBuilderFile = new File(path1+filename);
+//			File masterBuilderFile = new File(path1);
 //			if (!masterBuilderFile.exists()) {
 //				masterBuilderFile.createNewFile();
 //			}
@@ -199,7 +199,7 @@ public class ScriptRunnerController {
 //			bw = new BufferedWriter(fw);
 //			bw.write(intialize.toString());
 //			bw.close();
-//		
+		
 
 		
 		ProcessBuilder pb = new 
