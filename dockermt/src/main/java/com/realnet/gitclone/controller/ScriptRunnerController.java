@@ -98,7 +98,9 @@ public class ScriptRunnerController {
 	 *
 	 */
 	@GetMapping(value = "/runScript")
-	public  void runScript(@RequestParam String s1, @RequestParam String s2) throws IOException  {
+	public  void runScript(
+//			@RequestParam String s1, @RequestParam String s2
+			) throws IOException  {
 		
 	
 //		String sentence ="PRJ_NAME=gitclone";
@@ -137,70 +139,71 @@ public class ScriptRunnerController {
 //		System.out.println(list);
 		
 		
-		String line = "";
-		StringBuilder intialize = new StringBuilder();
-		StringBuilder class_name = new StringBuilder();
-		StringBuilder middle = new StringBuilder();
-		StringBuilder end = new StringBuilder();
-		BufferedReader br = new BufferedReader(new FileReader(path));
-		intialize.append("\"");
-	intialize.append("*****************************************\n"
-			+ "Below is the script to copy reporsitry\n"
-			+ "*****************************************\n"
-			+ "#!/bin/bash\n");
-	
-
-		while ((line = br.readLine()) != null) {
-			String[] data = line.split(",");
-			for (String d : data) {
-				       if (d.contains("PRJ_NAME=") ) {
-					intialize.append("PRJ_NAME=gitclone");
-					intialize.append("\n");
-				} else if (d.contains("GIT_USER=")) {
-					intialize.append("GIT_USER=admin123");
-					intialize.append("\n");
-				}
-				else if (d.contains("GIT_PASS=")) {
-					intialize.append("GIT_PASS=admin123");
-					intialize.append("\n");
-				}
-				else if (d.contains("GIT_URL_FROM=")) {
-					intialize.append("GIT_URL_FROM=http://13.126.217.36:31633/admin123/"+s1+".git");
-					intialize.append("\n");
-				}
-				else if (d.contains("GIT_URL_TO=")) {
-					intialize.append("GIT_URL_TO=http://13.126.217.36:31633/admin123/"+s2+".git");
-					intialize.append("\n");
-				}
-//				
-		}
-		}
-		intialize.append("docker build .\n"
-				+ "echo IMAGE_NAME=$GIT_URL_TO");
-		
-		System.out.println(intialize);
-		
-		String path1 =projectpath +"//testingfor script";
-
-	
-		FileWriter fw = null;
-		BufferedWriter bw = null;
-		
-			// FILE NAME SHOULD CHANGE DEPENDS ON TECH_STACK/OBJECT_tYPE/SUB_OBJECT_TYPE
-			File masterBuilderFile = new File(path1+"//copy.sh");
-			if (!masterBuilderFile.exists()) {
-				masterBuilderFile.createNewFile();
-			}
-			fw = new FileWriter(masterBuilderFile.getAbsoluteFile());
-			bw = new BufferedWriter(fw);
-			bw.write(intialize.toString());
-			bw.close();
+//		String line = "";
+//		StringBuilder intialize = new StringBuilder();
+//		StringBuilder class_name = new StringBuilder();
+//		StringBuilder middle = new StringBuilder();
+//		StringBuilder end = new StringBuilder();
+//		BufferedReader br = new BufferedReader(new FileReader(path));
+//		intialize.append("\"");
+//	intialize.append("*****************************************\n"
+//			+ "Below is the script to copy reporsitry\n"
+//			+ "*****************************************\n"
+//			+ "#!/bin/bash\n");
+//	
+//
+//		while ((line = br.readLine()) != null) {
+//			String[] data = line.split(",");
+//			for (String d : data) {
+//				       if (d.contains("PRJ_NAME=") ) {
+//					intialize.append("PRJ_NAME=gitclone");
+//					intialize.append("\n");
+//				} else if (d.contains("GIT_USER=")) {
+//					intialize.append("GIT_USER=admin123");
+//					intialize.append("\n");
+//				}
+//				else if (d.contains("GIT_PASS=")) {
+//					intialize.append("GIT_PASS=admin123");
+//					intialize.append("\n");
+//				}
+//				else if (d.contains("GIT_URL_FROM=")) {
+//					intialize.append("GIT_URL_FROM=http://13.126.217.36:31633/admin123/"+s1+".git");
+//					intialize.append("\n");
+//				}
+//				else if (d.contains("GIT_URL_TO=")) {
+//					intialize.append("GIT_URL_TO=http://13.126.217.36:31633/admin123/"+s2+".git");
+//					intialize.append("\n");
+//				}
+////				
+//		}
+//		}
+//		intialize.append("docker build .\n"
+//				+ "echo IMAGE_NAME=$GIT_URL_TO");
+//		
+//		System.out.println(intialize);
+//		
+//		String path1 =projectpath +"//testingfor script";
+//
+//	
+//		FileWriter fw = null;
+//		BufferedWriter bw = null;
+//		
+//			// FILE NAME SHOULD CHANGE DEPENDS ON TECH_STACK/OBJECT_tYPE/SUB_OBJECT_TYPE
+//			File masterBuilderFile = new File(path1+"//copy.sh");
+//			if (!masterBuilderFile.exists()) {
+//				masterBuilderFile.createNewFile();
+//			}
+//			fw = new FileWriter(masterBuilderFile.getAbsoluteFile());
+//			bw = new BufferedWriter(fw);
+//			bw.write(intialize.toString());
+//			bw.close();
 		
 
 		
 		ProcessBuilder pb = new 
-//		ProcessBuilder("C://Users//Karam//git//surepipe-runner//src//main//resources//ScriptFiles//multi_output.bat");
-		ProcessBuilder(path1+"//copy.sh");
+//		ProcessBuilder(path1+"//copy.sh");
+		ProcessBuilder(path);
+
 
 		
 		System.out.println(projectpath);
@@ -220,13 +223,13 @@ public class ScriptRunnerController {
 			while ((str = br2.readLine()) != null) {
 				System.out.println(str);
 			}
-			br.close();
+			br2.close();
 
 			} catch (IOException e) {
 	
 				e.printStackTrace();
 			}
-		masterBuilderFile.delete();
+//		masterBuilderFile.delete();
 	
 		
 		
