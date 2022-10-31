@@ -112,7 +112,7 @@ public class ScriptRunnerController {
 		
 		String str = null;
 		
-		String path =projectpath +"//src//main//resources//ScriptFiles//copy.sh";
+		String path =projectpath +"/src/main/resources/ScriptFiles/copy.sh";
 //		File pathfile = new File(path);
 //		String filename = pathfile.getName();
 //		
@@ -184,7 +184,7 @@ public class ScriptRunnerController {
 //		
 //		System.out.println(intialize);
 //		
-//		String path1 =projectpath +"//testingfor script";
+//		String path1 =projectpath +"/testingfor script";
 //
 //	
 //		FileWriter fw = null;
