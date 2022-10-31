@@ -12,7 +12,7 @@ public class GitCloneApplication {
 		SpringApplication.run(GitCloneApplication.class, args);
 		
 		String s ="hello";
-		String g = "gaurav";
+		String g = "gaurav1";
 		String k ="hello ganesh sir";
 		
 		System.out.println(s+"\n"+g +"\n"+k);
