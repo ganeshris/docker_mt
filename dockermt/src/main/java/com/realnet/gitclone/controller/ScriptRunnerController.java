@@ -109,7 +109,7 @@ public class ScriptRunnerController {
 		
 		String str = null;
 		
-		String path =projectpath +"/ScriptFiles/copy.sh";
+		String path =projectpath +"/docker_mt-main/dockermt/ScriptFiles/copy.sh";
 				
 
 		
@@ -163,7 +163,7 @@ public class ScriptRunnerController {
 		
 		String str = null;
 		
-		String path =projectpath +"/ScriptFiles/copy.sh";
+		String path =projectpath +"/docker_mt-main/dockermt/ScriptFiles/copy.sh";
 		File pathfile = new File(path);
 		String filename = pathfile.getName();
 		
@@ -235,7 +235,7 @@ public class ScriptRunnerController {
 		
 		System.out.println(intialize);
 		
-		String path1 =projectpath +"/testingfor script/"+filename;
+		String path1 =projectpath +"/docker_mt-main/dockermt/testingfor script/"+filename;
 		System.out.println(path1);
 
 	
