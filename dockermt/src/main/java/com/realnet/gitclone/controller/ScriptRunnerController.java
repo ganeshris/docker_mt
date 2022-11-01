@@ -113,6 +113,7 @@ public class ScriptRunnerController {
 		ProcessBuilder(path);
 
 		System.out.println(path);
+		System.out.println(new File("scripts/copy.sh").getAbsoluteFile());
 
 		pb.directory(new File(System.getProperty("user.home")));
 
@@ -234,6 +235,8 @@ public class ScriptRunnerController {
 		ProcessBuilder(path1);
 
 		System.out.println(path);
+		System.out.println(new File(path1).getAbsoluteFile());
+
 
 		pb.directory(new File(System.getProperty("user.home")));
 
