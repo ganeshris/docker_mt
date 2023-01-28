@@ -98,21 +98,24 @@ public class ScriptRunnerController {
 	 * @throws IOException
 	 *
 	 */
+	
+	//RUN SCRIPT
 	@GetMapping(value = "/runScript")
-	public ResponseEntity<?> runScript() throws IOException {
+	public ResponseEntity<?> runScript(@RequestParam String filepath,
+			                           @RequestParam String filename) throws IOException {
 
 		System.out.println("runScript method called in ScriptRunnerController");
 
 		String str = null;
 
-		String path = projectpath + "/ScriptFiles/copy.sh";
+		String path = filepath+"/"+filename;
 
 		ProcessBuilder pb = new
 //		ProcessBuilder("C://Users//Karam//git//surepipe-runner//src//main//resources//ScriptFiles//multi_output.bat");
 //		ProcessBuilder(path1+filename);
 		ProcessBuilder(path);
 
-		System.out.println("path taken ="+  path);
+//		System.out.println("path taken ="+  path);
 		System.out.println("file taken ="+new File(path).getAbsoluteFile());
 
 		pb.directory(new File(System.getProperty("user.home")));
@@ -130,13 +133,17 @@ public class ScriptRunnerController {
 				System.out.println(str);
 			}
 			br2.close();
-			return new ResponseEntity<>("file is running", HttpStatus.OK);
+			return new ResponseEntity<>(HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>("bad request", HttpStatus.BAD_REQUEST);
 		}
 
 	}
-
+	
+	
+	
+	
+	//NOT IN USE
 	@GetMapping(value = "/runScript1")
 	public ResponseEntity<?> runScript1(@RequestParam String s1, @RequestParam String s2) throws IOException {
 

@@ -11,11 +11,10 @@ public class GitCloneApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(GitCloneApplication.class, args);
 		
-		String s ="hello";
-		String g = "gaurav1";
-		String k ="hello ganesh sir";
+		String s ="Script runner is running";
 		
-		System.out.println(s+"\n"+g +"\n"+k);
+		
+		System.out.println(s+"\n");
 		
 		
 		
